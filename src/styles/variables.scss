@@ -45,8 +45,8 @@ $widescreen: 1180px + (2 * $gap);
 $fullhd-enabled: false;
 
 // Breakpoints
-//TODO: Fix name variable $breakpoint__down--lg => $breakpoint-lg-down (1180px - 0.02)
-$breakpoint__down--lg: 1179.98px + (2 * $gap);
+//TODO: Fix variable value
+$breakpoint-lg-down: 1179.98px + (2 * $gap);
 $breakpoint-md-down: 1024px - 0.02;
 $breakpoint-sm-down: 768px - 0.02;
 $breakpoint-xs-down: 576px - 0.02;

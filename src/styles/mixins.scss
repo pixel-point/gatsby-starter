@@ -3,7 +3,7 @@
 
 @mixin lg-down {
   // 1219.98 - 1024
-  @media only screen and (max-width: $breakpoint__down--lg) {
+  @media only screen and (max-width: $breakpoint-lg-down) {
     @content;
   }
 }
