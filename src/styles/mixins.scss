@@ -58,30 +58,6 @@
   }
 }
 
-@mixin with-link-primary {
-  a {
-    text-decoration: none;
-    color: $color-accent-primary;
-    transition: $transition-base;
-
-    &:hover {
-      color: $color-accent-primary-hover;
-    }
-  }
-}
-
-@mixin with-link-secondary {
-  a {
-    text-decoration: none;
-    color: $color-accent-secondary;
-    transition: $transition-base;
-
-    &:hover {
-      color: $color-accent-secondary-hover;
-    }
-  }
-}
-
 @mixin convert-br-into-space {
   br {
     content: '';
