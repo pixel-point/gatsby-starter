@@ -1,4 +1,4 @@
-//Colors
+// Colors
 $color-primary: '';
 $color-secondary: '';
 $color-tertiary: '';
@@ -10,12 +10,12 @@ $color-primary-hover: '';
 $color-accent-primary-hover: '';
 $color-accent-secondary-hover: '';
 
-//Fonts
-$font-family-primary: '', Arial, sans-serif;
-$font-family-secondary: '', Arial, sans-serif;
+// Fonts
+$font-family-primary: '';
+$font-family-secondary: '';
 
-$font-size-base: 16px;
-$line-height-base: 130%;
+$font-size-base: '';
+$line-height-base: '';
 
 $font-size-xxl: '';
 $line-height-xxl: '';
@@ -35,12 +35,9 @@ $line-height-sm: '';
 $font-size-xs: '';
 $line-height-xs: '';
 
-/*
-* bulma variables overwriting , more info
-* https://bulma.io/documentation/customize/variables/
-*/
+// Bulma variables overwriting, more info https://bulma.io/documentation/customize/variables/
 
-// overwriting initial values
+// Overwriting initial values
 $gap: 20px;
 $tablet: 768px;
 $desktop: 1024px;
@@ -48,11 +45,12 @@ $widescreen: 1180px + (2 * $gap);
 $fullhd-enabled: false;
 
 // Breakpoints
+//TODO: Fix name variable $breakpoint__down--lg => $breakpoint-lg-down (1180px - 0.02)
 $breakpoint__down--lg: 1179.98px + (2 * $gap);
-$breakpoint__down--md: 1023.98px;
-$breakpoint__down--sm: 767.98px;
-$breakpoint__down--xs: 575.98px;
-$breakpoint__down--xxs: 413.98px;
+$breakpoint-md-down: 1024px - 0.02;
+$breakpoint-sm-down: 768px - 0.02;
+$breakpoint-xs-down: 576px - 0.02;
+$breakpoint-xxs-down: 414px - 0.02;
 
 // Animate
 $transition-base: 0.2s;
