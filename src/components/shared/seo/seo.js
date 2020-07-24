@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
-import createMetaImagePath from 'utils/create-meta-image-path';
+// import { useStaticQuery, graphql } from 'gatsby';
+// import createMetaImagePath from 'utils/create-meta-image-path';
 
 const SEO = ({ data = {} }) => {
   const {
@@ -14,30 +14,36 @@ const SEO = ({ data = {} }) => {
     opengraphTitle,
     twitterTitle,
     twitterDescription,
-    opengraphImage,
-    twitterImage,
+    // opengraphImage,
+    // twitterImage,
     canonical,
   } = data;
 
-  const {
-    site: {
-      siteMetadata: { siteUrl },
-    },
-  } = useStaticQuery(graphql`
-    query getSettingsQuery {
-      site {
-        siteMetadata {
-          siteUrl
-        }
-      }
-    }
-  `);
+  // const {
+  //   wp: { generalSettings: settings },
+  //   site: {
+  //     siteMetadata: { siteUrl },
+  //   },
+  // } = useStaticQuery(graphql`
+  //   query getSettingsQuery {
+  //     wp {
+  //       generalSettings {
+  //         language
+  //       }
+  //     }
+  //     site {
+  //       siteMetadata {
+  //         siteUrl
+  //       }
+  //     }
+  //   }
+  // `);
 
   return (
     <Helmet
       title={title}
       htmlAttributes={{
-        lang: settings.language,
+        // lang: settings.language,
         prefix: 'og: http://ogp.me/ns#',
       }}
     >
@@ -49,17 +55,17 @@ const SEO = ({ data = {} }) => {
       <meta property="og:title" content={opengraphTitle} />
       <meta property="og:description" content={opengraphDescription} />
       <meta property="og:type" content="website" />
-      {opengraphImage && (
+      {/* {opengraphImage && (
         <meta property="og:image" content={createMetaImagePath(opengraphImage, siteUrl)} />
-      )}
+      )} */}
       {/* Twitter */}
       {twitterTitle !== '' && <meta name="twitter:title" content={twitterTitle} />}
       {twitterDescription !== '' && (
         <meta name="twitter:description" content={twitterDescription} />
       )}
-      {twitterImage && (
+      {/* {twitterImage && (
         <meta property="twitter:image" content={createMetaImagePath(twitterImage, siteUrl)} />
-      )}
+      )} */}
       <link rel="canonical" href={canonical} />
     </Helmet>
   );
