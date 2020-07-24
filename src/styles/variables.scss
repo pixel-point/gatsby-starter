@@ -1,10 +1,58 @@
-// Colors, follow name convention https://codepen.io/nicetransition/pen/QjwbRg
+//Colors
+$color-primary: #000;
+$color-secondary: '';
+$color-tertiary: #ffffff;
 
-$color-dark-dark: #010101;
-$color-dark-dark-contrast: #fff;
-$color-dark: #4f4e4e;
-$color-dark-contrast: #fff;
-$color-dark-light: #808285;
-$color-dark-light-contrast: #fff;
-$color-dark-accent: #bcbec0;
-$color-dark-accent-contrast: #000;
+$color-accent-primary: '';
+$color-accent-secondary: '';
+
+$color-primary-hover: '';
+$color-accent-primary-hover: '';
+$color-accent-secondary-hover: '';
+
+//Fonts
+$font-family-primary: '', Arial, sans-serif;
+$font-family-secondary: '', Arial, sans-serif;
+
+$font-size-base: 16px;
+$line-height-base: 130%;
+
+$font-size-xxl: '';
+$line-height-xxl: '';
+
+$font-size-xl: '';
+$line-height-xl: '';
+
+$font-size-lg: '';
+$line-height-lg: '';
+
+$font-size-md: '';
+$line-height-md: '';
+
+$font-size-sm: '';
+$line-height-sm: '';
+
+$font-size-xs: '';
+$line-height-xs: '';
+
+/*
+* bulma variables overwriting , more info
+* https://bulma.io/documentation/customize/variables/
+*/
+
+// overwriting initial values
+$gap: 20px;
+$tablet: 768px;
+$desktop: 1024px;
+$widescreen: 1180px + (2 * $gap);
+$fullhd-enabled: false;
+
+// Breakpoints
+$breakpoint__down--lg: 1179.98px + (2 * $gap);
+$breakpoint__down--md: 1023.98px;
+$breakpoint__down--sm: 767.98px;
+$breakpoint__down--xs: 575.98px;
+$breakpoint__down--xxs: 413.98px;
+
+// Animate
+$transition-base: 0.2s;
