@@ -2,11 +2,9 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import LayoutMain from 'layouts/layout-main';
-import { SEO } from 'components/shared/seo/seo';
 
 const IndexPage = () => (
   <LayoutMain>
-    <SEO />
     <div className="container">
       <div className="columns">
         <div className="column">1</div>
