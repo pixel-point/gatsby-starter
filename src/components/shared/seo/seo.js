@@ -9,14 +9,14 @@ const SEO = ({ data = {} }) => {
     title,
     metaDesc,
     metaKeywords,
-    // opengraphUrl,
+    opengraphUrl,
     opengraphDescription,
     opengraphTitle,
     twitterTitle,
     twitterDescription,
     opengraphImage,
     twitterImage,
-    // canonical,
+    canonical,
   } = data;
 
   const {
