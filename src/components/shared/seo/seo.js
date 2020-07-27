@@ -34,7 +34,8 @@ const SEO = ({ data: { title, description, image, slug } = {}, facebook } = {}) 
   const currentTitle = title || siteTitle;
   const currentDescription = description || siteDescription;
   const currentUrl = slug ? `${siteUrl}/${slug}` : siteUrl;
-  const currentImage = createMetaImagePath(image, siteUrl, siteImage);
+  const currentImage = image || siteImage;
+  const currentImagePath = createMetaImagePath(currentImage, siteUrl);
 
   return (
     <Helmet
@@ -50,7 +51,7 @@ const SEO = ({ data: { title, description, image, slug } = {}, facebook } = {}) 
       <meta property="og:url" content={currentUrl} />
       <meta property="og:title" content={currentTitle} />
       <meta property="og:description" content={currentDescription} />
-      <meta property="og:image" content={currentImage} />
+      <meta property="og:image" content={currentImagePath} />
       <meta property="og:type" content="website" />
       {facebook && <meta property="fb:app_id" content={facebook.appId} />}
       {/* Twitter Card tags */}
