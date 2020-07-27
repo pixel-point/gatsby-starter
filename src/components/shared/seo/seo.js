@@ -30,6 +30,7 @@ const SEO = ({ data: { title, description, image, slug } = {}, facebook } = {}) 
       }
     }
   `);
+
   const currentTitle = title || siteTitle;
   const currentDescription = description || siteDescription;
   const currentUrl = slug ? `${siteUrl}/${slug}` : siteUrl;
@@ -44,17 +45,17 @@ const SEO = ({ data: { title, description, image, slug } = {}, facebook } = {}) 
       }}
     >
       {/* General */}
-      <meta name={'description'} content={currentDescription} />
+      <meta name="description" content={currentDescription} />
       {/* Open Graph */}
-      <meta property={'og:url'} content={currentUrl} />
-      <meta property={'og:title'} content={currentTitle} />
-      <meta property={'og:description'} content={currentDescription} />
-      <meta property={'og:image'} content={currentImage} />
-      <meta property={'og:type'} content={'website'} />
-      {facebook && <meta property={'fb:app_id'} content={facebook.appId} />}
+      <meta property="og:url" content={currentUrl} />
+      <meta property="og:title" content={currentTitle} />
+      <meta property="og:description" content={currentDescription} />
+      <meta property="og:image" content={currentImage} />
+      <meta property="og:type" content="website" />
+      {facebook && <meta property="fb:app_id" content={facebook.appId} />}
       {/* Twitter Card tags */}
-      <meta name={'twitter:card'} content={'summary'} />
-      <meta name={'twitter:creator'} content={authorTwitterAccount} />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:creator" content={authorTwitterAccount} />
     </Helmet>
   );
 };
