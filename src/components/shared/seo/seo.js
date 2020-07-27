@@ -1,72 +1,60 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Helmet } from 'react-helmet';
-// import { useStaticQuery, graphql } from 'gatsby';
-// import createMetaImagePath from 'utils/create-meta-image-path';
+import { useStaticQuery, graphql } from 'gatsby';
+import createMetaImagePath from 'utils/create-meta-image-path';
 
-const SEO = ({ data = {} }) => {
+const SEO = ({ data: { title, description, image, slug } = {}, facebook } = {}) => {
   const {
-    title,
-    metaDesc,
-    metaKeywords,
-    opengraphUrl,
-    opengraphDescription,
-    opengraphTitle,
-    twitterTitle,
-    twitterDescription,
-    // opengraphImage,
-    // twitterImage,
-    canonical,
-  } = data;
-
-  // const {
-  //   wp: { generalSettings: settings },
-  //   site: {
-  //     siteMetadata: { siteUrl },
-  //   },
-  // } = useStaticQuery(graphql`
-  //   query getSettingsQuery {
-  //     wp {
-  //       generalSettings {
-  //         language
-  //       }
-  //     }
-  //     site {
-  //       siteMetadata {
-  //         siteUrl
-  //       }
-  //     }
-  //   }
-  // `);
+    site: {
+      siteMetadata: {
+        siteTitle,
+        siteDescription,
+        siteUrl,
+        siteImage,
+        siteLanguage,
+        authorTwitterAccount,
+      },
+    },
+  } = useStaticQuery(graphql`
+    query SEO {
+      site {
+        siteMetadata {
+          siteTitle
+          siteDescription
+          siteUrl
+          siteImage
+          siteLanguage
+          authorTwitterAccount
+        }
+      }
+    }
+  `);
+  const currentTitle = title || siteTitle;
+  const currentDescription = description || siteDescription;
+  const currentUrl = slug ? `${siteUrl}/${slug}` : siteUrl;
+  const currentImage = createMetaImagePath(image, siteUrl, siteImage);
 
   return (
     <Helmet
-      title={title}
+      title={currentTitle}
       htmlAttributes={{
-        // lang: settings.language,
+        lang: siteLanguage,
         prefix: 'og: http://ogp.me/ns#',
       }}
     >
       {/* General */}
-      <meta name="description" content={metaDesc} />
-      {metaKeywords !== '' && <meta name="description" content={metaKeywords} />}
+      <meta name={'description'} content={currentDescription} />
       {/* Open Graph */}
-      <meta property="og:url" content={opengraphUrl} />
-      <meta property="og:title" content={opengraphTitle} />
-      <meta property="og:description" content={opengraphDescription} />
-      <meta property="og:type" content="website" />
-      {/* {opengraphImage && (
-        <meta property="og:image" content={createMetaImagePath(opengraphImage, siteUrl)} />
-      )} */}
-      {/* Twitter */}
-      {twitterTitle !== '' && <meta name="twitter:title" content={twitterTitle} />}
-      {twitterDescription !== '' && (
-        <meta name="twitter:description" content={twitterDescription} />
-      )}
-      {/* {twitterImage && (
-        <meta property="twitter:image" content={createMetaImagePath(twitterImage, siteUrl)} />
-      )} */}
-      <link rel="canonical" href={canonical} />
+      <meta property={'og:url'} content={currentUrl} />
+      <meta property={'og:title'} content={currentTitle} />
+      <meta property={'og:description'} content={currentDescription} />
+      <meta property={'og:image'} content={currentImage} />
+      <meta property={'og:type'} content={'website'} />
+      {facebook && <meta property={'fb:app_id'} content={facebook.appId} />}
+      {/* Twitter Card tags */}
+      <meta name={'twitter:card'} content={'summary'} />
+      <meta name={'twitter:creator'} content={authorTwitterAccount} />
     </Helmet>
   );
 };
