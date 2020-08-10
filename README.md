@@ -1,4 +1,4 @@
-# PixelPoint Gatsby Starter
+# Pixel Point Gatsby Starter
 
 ## Table of Contents
 
