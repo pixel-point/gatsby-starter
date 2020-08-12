@@ -37,7 +37,7 @@
     "eslint-plugin-react": "^7.20.4",
     "eslint-plugin-react-hooks": "^4.0.8",
     "gatsby-alias-imports": "^1.0.4",
-    "gatsby-plugin-manifest": "^2.4.21",
+    "gatsby-plugin-manifest": "^2.4.23",
     "gatsby-plugin-offline": "^3.2.21",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sass": "^2.3.12",
