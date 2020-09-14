@@ -2,9 +2,8 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
-    node: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'prettier', 'prettier/react'],
+  extends: ['airbnb', 'airbnb/hooks', 'airbnb/whitespace'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -18,10 +17,14 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    'react/jsx-filename-extension': [
-      2,
+    'no-shadow': 0,
+    'object-curly-newline': [
+      'error',
       {
-        extensions: ['.js'],
+        ObjectExpression: { multiline: true, consistent: true },
+        ObjectPattern: { multiline: true, consistent: true },
+        ImportDeclaration: { multiline: true, consistent: true },
+        ExportDeclaration: { multiline: true, consistent: true },
       },
     ],
     'react/no-array-index-key': 0,
