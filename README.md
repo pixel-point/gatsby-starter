@@ -4,32 +4,39 @@
 
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-  - [Run website](#run-the-website)
-  - [Build website](#build-the-website)
-  - [Run built website](#run-built-website)
+  - [Run the website](#run-the-website)
+  - [Run Storybook](#run-storybook)
+  - [Build the project](#build-the-project)
+  - [Build the website](#build-the-website)
+  - [Build Storybook](#build-storybook)
+  - [Run the built website](#run-the-built-website)
+  - [Run built Storybook](#run-built-storybook)
   - [Clean Gatsby cache](#clean-gatsby-cache)
 - [Project Structure](#project-structure)
-- [Code Style](#code-style)
-  - [ESLint](#eslint)
-  - [Prettier](#prettier)
-  - [VS Code](#vs-code)
+- [Component Folder Structure](#component-folder-structure)
+  - [Each component includes](#each-component-includes)
+  - [Each component optionally may include](#each-component-optionally-may-include)
+  - [Example structure](#example-structure)
+- [Commits](#commits)
+- [VS Code](#vs-code)
+- [Storybook](#storybook)
 - [Style Variables](#style-variables)
 
 ## Getting Started
 
-1. Clone this repository
+1. **Clone this repository**
 
-```bash
-git clone git@github.com:pixel-point/gatsby-starter.git
-```
+    ```bash
+    git clone git@github.com:pixel-point/gatsby-starter.git
+    ```
 
-2. Install dependencies
+1. **Install dependencies**
 
-```bash
-npm install
-```
+    ```bash
+    npm install
+    ```
 
-3. Copy .env.example and rename it into .env
+1. **Copy .env.example and rename it into .env**
 
 ## Usage
 
@@ -39,16 +46,40 @@ npm install
 npm run start
 ```
 
-### Build the website
+### Run Storybook
+
+```bash
+npm run storybook
+```
+
+### Build the project
 
 ```bash
 npm run build
 ```
 
+### Build the website
+
+```bash
+npm run build:website
+```
+
+### Build Storybook
+
+```bash
+npm run build:storybook
+```
+
 ### Run the built website
 
 ```bash
-npm run serve
+npm run serve:website
+```
+
+### Run built Storybook
+
+```bash
+npm run serve:storybook
 ```
 
 ### Clean Gatsby cache
@@ -65,6 +96,7 @@ npm run clean
 │   │  ├── pages — React components that are being used specifically on a certain page
 │   │  └── shared — React components that are being used across the whole website
 │   ├── hooks
+│   ├── icons
 │   ├── images — Images that are being quired using graphql. Read more about it here — gatsbyjs.org/docs/working-with-images. Also note, that folder structure should be equal to the structure of components folder
 │   ├── layouts
 │   ├── pages
@@ -84,16 +116,14 @@ npm run clean
 
 ### Each component includes
 
-1. Main JavaScript File
+1. Main JSX File
 2. SASS File
 3. Index File
 
 ### Each component optionally may include
 
 1. Folder with images
-2. Folder with icons
-
-Also, each component may include another component that follows all above listed rules.
+2. Another component that follows all listed above rules.
 
 ### Example structure
 
@@ -101,74 +131,55 @@ Also, each component may include another component that follows all above listed
 component
 ├── nested-component
 │  ├── images
-│  │  └── image.png
-│  ├── icons
-│  │  └── icon.svg
-│  ├── nested-component.js
+│  │  ├── image.svg
+│  │  └── icon.inline.svg
+│  ├── nested-component.jsx
 │  ├── nested-component.module.scss
 │  └── index.js
 ├── images
-│  └── image.png
-├── icons
-│  └── icon.svg
-├── component.js
+│  ├── image.svg
+│  └── icon.inline.svg
+├── component.jsx
 ├── component.module.scss
 └── index.js
 ```
 
-## Code Style
+## Commits
 
-### ESLint
+We use Conventional Commits for commit messages. You can read more about Conventional Commits [here](https://www.conventionalcommits.org/en/v1.0.0/). [Here](https://cheatography.com/albelop/cheat-sheets/conventional-commits/) you can find a useful Conventional Commits Cheat Sheet.
 
-[ESLint](https://eslint.org/) helps find and fix code style issues and force developers to follow same rules. Current configuration is based on [Airbnb style guide](https://github.com/airbnb/javascript).
+We try to make our commits "atomic". [Here](https://www.freshconsulting.com/atomic-commits/) and [here](https://en.wikipedia.org/wiki/Atomic_commit) you can read more about Atomic commits.
 
-Additional commands:
-
-```bash
-npm run lint
-```
-
-Run it to check the current status of eslint issues across project.
-
-```bash
-npm run lint:fix
-```
-
-Run it to fix all possible issues.
-
-### Prettier
-
-[Prettier](https://prettier.io/) helps to format code based on defined rules. [Difference between Prettier and ESLint](https://prettier.io/docs/en/comparison.html).
-
-Additional commands:
-
-```bash
-npm run format
-```
-
-Run it to format all files across the project.
-
-### VS Code
+## VS Code
 
 Following extensions required to simplify the process of keeping the same code style across the project:
 
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+- [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 
-After installation enable "ESLint on save" by adding to your VS Code settings.json the following line:
+After installation add these lines to your VS Code `settings.json`:
 
 ```json
 "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-}
+  "source.fixAll": true
+},
+"css.validate": false,
+"less.validate": false,
+"scss.validate": false
 ```
 
-You can navigate to settings.json by using Command Pallete (CMD+Shift+P) and then type "Open settings.json".
+You can navigate to `settings.json` by using Command Pallete (CMD+Shift+P) and then type "Open settings.json".
 
-To enable Prettier go to Preferences -> Settings -> type "Format". Then check that you have esbenp.prettier-vscode as default formatter, and also enable "Format On Save".
+Also, make sure that these extensions are installed too:
 
-Reload VS Code and auto-format will work for you.
+- [CSS Modules](https://marketplace.visualstudio.com/items?itemName=clinyong.vscode-css-modules)
+- [GraphQL](https://marketplace.visualstudio.com/items?itemName=Prisma.vscode-graphql)
+
+## Storybook
+
+[Storybook](https://storybookjs.org) is a tool for previewing and building components in an isolated environment. Storybook also allows us to change props using knobs showing the developer what happens when a specific value is used. We should use this for both a development environment and a documentation tool.
 
 ## Style Variables
 
-All style variables that being used across the whole application are stored in [src/styles/variables.scss](/src/styles/variables.scss).
+All style variables that being used across the whole website are stored in [src/styles/variables.scss](/src/styles/variables.scss).
