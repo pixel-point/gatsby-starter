@@ -62,7 +62,7 @@
   br {
     content: '';
 
-    &:after {
+    &::after {
       content: ' ';
     }
   }

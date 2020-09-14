@@ -2,7 +2,7 @@ import React from 'react';
 import MainLayout from 'layouts/main';
 import Link from 'components/shared/link';
 
-const IndexPage = () => (
+export default () => (
   <MainLayout>
     <div className="container">
       <div className="columns">
@@ -15,5 +15,3 @@ const IndexPage = () => (
     </div>
   </MainLayout>
 );
-
-export default IndexPage;
