@@ -30,7 +30,14 @@ module.exports = {
     'import/no-extraneous-dependencies': [
       'error',
       {
-        devDependencies: ['gatsby-config.js', 'gatsby-node.js', 'gatsby-ssr.js'],
+        devDependencies: [
+          '.storybook/**',
+          'src/components/**/*.stories.js',
+          'src/components/**/*.stories.jsx',
+          'gatsby-config.js',
+          'gatsby-node.js',
+          'gatsby-ssr.js',
+        ],
       },
     ],
     'jsx-a11y/label-has-associated-control': [

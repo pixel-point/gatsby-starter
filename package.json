@@ -3,19 +3,23 @@
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Alex Barashkov <alex@pixelpoint.io>",
+  "author": "Alex Barashkov <alex@pixelpoint.io>",  
   "scripts": {
-    "start": "npm run develop",
-    "develop": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "start": "npm run develop:website",
+    "storybook": "npm run develop:storybook",
+    "develop:website": "gatsby develop  -H 0.0.0.0",
+    "develop:storybook": "start-storybook -p 8001 -s static",
+    "build": "npm run build:website && npm run build:storybook",
+    "build:website": "gatsby build",
+    "build:storybook": "build-storybook -o ./public/storybook -s static",
+    "serve:website": "gatsby serve",
+    "serve:storybook": "npx http-server ./public/storybook -p 8001",
+    "clean:website": "gatsby clean",
     "format": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@svgr/webpack": "^5.4.0",
     "bulma": "^0.9.0",
     "classnames": "^2.2.6",
     "gatsby": "^2.24.57",
@@ -28,6 +32,10 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-knobs": "^6.0.21",
+    "@storybook/react": "^6.0.21",
+    "@svgr/webpack": "^5.4.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.9.0",
     "eslint-config-airbnb": "^18.2.0",
@@ -47,7 +55,8 @@
     "gatsby-transformer-sharp": "^2.5.14",
     "husky": "^4.3.0",
     "lint-staged": "^10.3.0",
-    "prettier": "^2.1.1"
+    "prettier": "^2.1.1",
+    "resolve-url-loader": "^3.1.1"
   },
   "keywords": [
     "gatsby"
