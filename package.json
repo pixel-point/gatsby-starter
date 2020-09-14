@@ -19,7 +19,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:styles": "stylelint '{**/*,*}.{css,sass,scss,md,html}' --ignore-path .gitignore",
-    "lint:styles:fix": "stylelint '{**/*,*}.{css,sass,scss,md,html}' --cache --fix --ignore-path .gitignore"
+    "lint:styles:fix": "stylelint '{**/*,*}.{css,sass,scss,md,html}' --cache --fix --ignore-path .gitignore",
+    "lint:md": "markdownlint --ignore-path .gitignore .",
+    "lint:md:fix": "markdownlint --fix --ignore-path .gitignore ."
   },
   "dependencies": {
     "bulma": "^0.9.0",
@@ -59,6 +61,7 @@
     "gatsby-transformer-sharp": "^2.5.14",
     "husky": "^4.3.0",
     "lint-staged": "^10.3.0",
+    "markdownlint-cli": "^0.23.2",
     "prettier": "^2.1.1",
     "resolve-url-loader": "^3.1.1",
     "stylelint": "^13.7.1",
