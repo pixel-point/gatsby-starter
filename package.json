@@ -17,7 +17,9 @@
     "clean:website": "gatsby clean",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "lint:styles": "stylelint '{**/*,*}.{css,sass,scss,md,html}' --ignore-path .gitignore",
+    "lint:styles:fix": "stylelint '{**/*,*}.{css,sass,scss,md,html}' --cache --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "bulma": "^0.9.0",
@@ -58,7 +60,14 @@
     "husky": "^4.3.0",
     "lint-staged": "^10.3.0",
     "prettier": "^2.1.1",
-    "resolve-url-loader": "^3.1.1"
+    "resolve-url-loader": "^3.1.1",
+    "stylelint": "^13.7.1",
+    "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-recess-order": "^2.1.0",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0"
   },
   "keywords": [
     "gatsby"
