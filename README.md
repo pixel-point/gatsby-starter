@@ -38,6 +38,10 @@
 
 1. **Copy .env.example and rename it into .env**
 
+    ```bash
+    cp .env.example .env
+    ```
+
 ## Usage
 
 ### Run the website
@@ -175,6 +179,7 @@ Also, make sure that these extensions are installed too:
 
 - [CSS Modules](https://marketplace.visualstudio.com/items?itemName=clinyong.vscode-css-modules)
 - [GraphQL](https://marketplace.visualstudio.com/items?itemName=Prisma.vscode-graphql)
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 
 ## Storybook
 
