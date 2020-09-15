@@ -5,7 +5,7 @@ import styles from './header.module.scss';
 const cx = classNames.bind(styles);
 
 const Header = () => (
-  <header className={cx('wrapper')}>
+  <header className={cx('wrapper', 'section')}>
     <div className="container">Header</div>
   </header>
 );
