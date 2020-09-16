@@ -44,7 +44,7 @@
     "gatsby-plugin-sharp": "^2.6.22",
     "gatsby-plugin-svgr-svgo": "^1.0.12",
     "gatsby-source-filesystem": "^2.3.23",
-    "gatsby-transformer-sharp": "^2.5.11",
+    "gatsby-transformer-sharp": "^2.5.15",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5"
