@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
-    "eslint": "^7.5.0",
+    "eslint": "^7.12.1",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
