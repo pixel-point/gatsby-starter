@@ -47,7 +47,7 @@
     "gatsby-plugin-manifest": "^2.4.36",
     "gatsby-plugin-offline": "^3.2.37",
     "gatsby-plugin-react-helmet": "^3.3.14",
-    "gatsby-plugin-sass": "^2.3.21",
+    "gatsby-plugin-sass": "^2.5.0",
     "gatsby-plugin-sharp": "^2.6.43",
     "gatsby-plugin-svgr-svgo": "^1.0.12",
     "gatsby-source-filesystem": "^2.3.37",
