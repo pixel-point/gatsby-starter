@@ -24,7 +24,7 @@
   "dependencies": {
     "@svgr/webpack": "^5.5.0",
     "classnames": "^2.3.1",
-    "gatsby": "^3.4.1",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^3.4.0",
     "normalize.css": "^8.0.1",
     "postcss": "^8.2.14",
