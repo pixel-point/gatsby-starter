@@ -57,7 +57,7 @@
     "lint-staged": "^10.5.4",
     "markdownlint-cli": "^0.27.1",
     "prettier": "^2.2.1",
-    "stylelint": "^13.13.1",
+    "stylelint": "^15.10.1",
     "stylelint-config-css-modules": "^2.2.0",
     "stylelint-config-recess-order": "^2.4.0",
     "stylelint-config-recommended-scss": "^4.2.0",
